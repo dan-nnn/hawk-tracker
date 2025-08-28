@@ -11,6 +11,7 @@ export enum LISTEN_TYPES {
   HASHCHANGE = 'hashchange',
   HISTORYPUSHSTATE = 'history-pushState',
   HISTORYREPLACESTATE = 'history-replaceState',
+  SCROLL = 'scroll',
   POPSTATE = 'popstate',
   READYSTATECHANGE = 'readystatechange',
   ONLINE = 'online',

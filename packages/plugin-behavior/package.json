@@ -1,0 +1,45 @@
+{
+  "name": "@hawk-tracker/plugin-behavior",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "description": "Error monitoring plugin for the web SDK",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "eslint \"src/**/*.{ts,js}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,js}\" --fix",
+    "test": "jest",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@hawk-tracker/core": "workspace:*",
+    "@hawk-tracker/plugin-behavior": "workspace:*"
+  },
+  "keywords": [
+    "sdk",
+    "plugin",
+    "behavior"
+  ],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@workspace/build-config": "workspace:*",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "rollup": "^4.46.2"
+  }
+}

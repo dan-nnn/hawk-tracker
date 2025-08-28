@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
 import { useAuth } from "../contexts/AuthContext";
 import { ProtectedRoute } from "../components/ProtectedRoute";
+import { Link } from "react-router-dom";
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -18,7 +19,7 @@ function HomeContent() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
+    <div className="min-h-screen bg-white">
       {/* 导航栏 */}
       <nav className="bg-white/80 backdrop-blur-sm shadow-sm border-b border-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,8 +40,20 @@ function HomeContent() {
         </div>
       </nav>
 
+      {/* 用户行为监控 按钮 */}
+      <div className="container mx-auto px-4 mt-2 mb-8">
+        <div className="flex justify-end gap-4">
+          <Link to="/behavior-monitor">
+            <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-md transition duration-200 shadow-md hover:shadow-lg">
+              用户行为监控
+            </button>
+          </Link>
+        </div>
+      </div>
+
       <Welcome />
-    </div>
+    </div >
+
   );
 }
 

@@ -10,6 +10,8 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { AuthProvider } from "./contexts/AuthContext";
+import { useEffect } from "react";
+import { initMonitor } from "./monitor";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -25,6 +27,9 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export default function App() {
+  useEffect(() => {
+    initMonitor();
+  }, []);
   return (
     <html lang="zh-CN">
       <head>
